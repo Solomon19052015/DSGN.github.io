@@ -42,7 +42,7 @@ function scrollMenuAdd(){
 
 function scrollMenu(){
     let offset = window.pageYOffset ||  document.documentElement.scrollTop;
-    if(offset > 300){
+    if(offset > 400){
         buttonMenu.classList.add("buttonMenuScroll");
     }
     else{

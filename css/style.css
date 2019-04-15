@@ -54,6 +54,36 @@
     height: 2px;
     width: 45%;
   }
+  body .container .rightHead .buttonMenuScroll {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-animation: menuButtonShadowTel 0.4s ease-in 0s 1 alternate forwards;
+            animation: menuButtonShadowTel 0.4s ease-in 0s 1 alternate forwards;
+  }
+  @-webkit-keyframes menuButtonShadowTel {
+    0% {
+      -webkit-transform: scale(0.9) translateY(0%);
+              transform: scale(0.9) translateY(0%);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(0.9) translateY(-100%);
+              transform: scale(0.9) translateY(-100%);
+      opacity: 1;
+    }
+  }
+  @keyframes menuButtonShadowTel {
+    0% {
+      -webkit-transform: scale(0.9) translateY(0%);
+              transform: scale(0.9) translateY(0%);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(0.9) translateY(-100%);
+              transform: scale(0.9) translateY(-100%);
+      opacity: 1;
+    }
+  }
   body .container .rightHead::before {
     display: none;
   }
@@ -188,7 +218,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-position: 100% 100%;
+    background-position-x: 120%;
   }
   body .container .tabano .descritpTabano {
     height: 90%;
@@ -205,8 +235,13 @@
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
+  body .container .potter {
+    background-position: 110% 100%;
+  }
   body .container .p22 {
-    background-position: -40px 100%;
+    background-position-x: -70px;
+    background-position-y: 30px;
+    background-size: 120%;
   }
   body .container .p22 .descritpP22 {
     -webkit-box-orient: vertical;
@@ -229,7 +264,12 @@
   body .container .sesann .descritpSesann .rightS {
     margin-top: 0;
   }
+  body .container .fondue {
+    background-position-x: 120%;
+  }
   body .container .fondue .descriptFounde {
+    width: 85%;
+    margin: 0 auto;
     height: 300px;
     margin-top: 20px;
   }
@@ -301,6 +341,22 @@
   }
 }
 
+@media (max-width: 330px) {
+  body .container .tabano {
+    background-position-x: 80px;
+  }
+  body .container .p22 {
+    background-position-x: -60px;
+    background-position-y: 70px;
+  }
+  body .container .figi {
+    background-size: 65%;
+  }
+  body .container .sesann {
+    background-size: 90%;
+  }
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -318,9 +374,98 @@ body {
       grid-template-rows: repeat(7, 1fr) 70px;
       grid-template-areas: "leftHead leftHead leftHead leftHead leftHead leftHead  leftHead rightHead rightHead rightHead" "leftHead leftHead leftHead leftHead leftHead leftHead  leftHead rightHead rightHead rightHead" "progect progect progect fondue fondue fondue fondue potter potter potter" "progect progect progect fondue fondue fondue fondue tabano tabano tabano" "louis louis p22 p22 p22 p22 p22 tabano tabano tabano" "louis louis p22 p22 p22 p22 p22 figi figi figi" "sesann sesann sesann sesann sesann alessi alessi timeline timeline timeline" "sesann sesann sesann sesann sesann alessi alessi timeline timeline timeline";
   grid-auto-flow: row;
+  /*меню навигации*/
   /* ОБЩИЕ СТИЛИ */
   /* ЛЕВЫЙ ХЕДЕР */
   /* SECTION2 */
+}
+
+.container .menu {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.849);
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.container .menu .close {
+  color: #fff;
+  position: absolute;
+  left: 85%;
+  top: 15%;
+  font-size: 40px;
+  display: block;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.container .menu .close:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.container .menu ul {
+  width: 100%;
+}
+
+.container .menu ul li {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.container .menu ul li a {
+  color: rgba(255, 255, 255, 0.849);
+  font-size: 24px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.container .menu ul li a:hover {
+  color: white;
+  -webkit-animation: linkSheik 0.2s ease-in 0s infinite alternate forwards;
+          animation: linkSheik 0.2s ease-in 0s infinite alternate forwards;
+}
+
+@-webkit-keyframes linkSheik {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@keyframes linkSheik {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+.container .openMenu {
+  opacity: 1;
+  z-index: 99;
 }
 
 .container p {
@@ -531,6 +676,11 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: buttonMenu;
+  /* transition: all 0.8s ease; */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 
 .container .rightHead .buttonMenu span {
@@ -540,6 +690,49 @@ body {
   width: 30%;
   height: 2px;
   background: white;
+}
+
+.container .rightHead .buttonMenuScroll {
+  position: fixed;
+  bottom: -5%;
+  right: 2%;
+  border-color: #fd5000;
+  color: #fd5000;
+  z-index: 98;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+  -webkit-animation: menuButtonShadow 0.4s ease-in 0s 1 alternate forwards;
+          animation: menuButtonShadow 0.4s ease-in 0s 1 alternate forwards;
+}
+
+.container .rightHead .buttonMenuScroll span {
+  background: #fd5000;
+}
+
+@-webkit-keyframes menuButtonShadow {
+  0% {
+    -webkit-transform: scale(0.6) translateY(0%);
+            transform: scale(0.6) translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.6) translateY(-100%);
+            transform: scale(0.6) translateY(-100%);
+    opacity: 1;
+  }
+}
+
+@keyframes menuButtonShadow {
+  0% {
+    -webkit-transform: scale(0.6) translateY(0%);
+            transform: scale(0.6) translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.6) translateY(-100%);
+            transform: scale(0.6) translateY(-100%);
+    opacity: 1;
+  }
 }
 
 .container .rightHead .contactAdress {
@@ -1094,7 +1287,7 @@ body {
 }
 
 .container .alessi {
-  background: url(image/img8.jpf) no-repeat, #cecece;
+  background: url(image/img8.jpg) no-repeat, #cecece;
   background-size: 90%;
   -ms-grid-row: 7;
   -ms-grid-row-span: 2;

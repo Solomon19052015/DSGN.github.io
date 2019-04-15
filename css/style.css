@@ -95,6 +95,7 @@
         justify-self: center;
     width: 95%;
     margin-right: 0;
+    margin-top: 30px;
   }
   body .container .section_2 .descriptStaff {
     width: 95%;
@@ -637,7 +638,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
 }
 
 .container .progect .descriptProgect .nav ul li a {
@@ -674,9 +675,9 @@ body {
   font-size: 48px;
   color: #fff;
   text-align: right;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   width: 90%;
+  position: absolute;
+  top: 60%;
 }
 
 .container .fondue {
@@ -1093,7 +1094,7 @@ body {
 }
 
 .container .alessi {
-  background: url(image/img8.jpg) no-repeat, #cecece;
+  background: url(image/img8.jpf) no-repeat, #cecece;
   background-size: 90%;
   -ms-grid-row: 7;
   -ms-grid-row-span: 2;
